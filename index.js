@@ -535,8 +535,9 @@ const getVideoDateFilter = (data) => {
   var finalObj = {};
   data.forEach((element) => {
     const d2 = new Date(element.createdAt);
-    const timeStamp = `${d2.getFullYear()}-${d2.getMonth() + 1
-      }-${d2.getDate()}`;
+    const timeStamp = `${d2.getFullYear()}-${
+      d2.getMonth() + 1
+    }-${d2.getDate()}`;
     if (finalObj[timeStamp] == undefined) {
       finalObj[timeStamp] = [element];
     } else {
@@ -575,7 +576,6 @@ const getVideoFilter = (data, start, end) => {
         finalObj[getDateName(d1, d2)].push(subObj);
       }
     }
-
   }
   // console.log(JSON.stringify(finalObj));
   return finalObj;
